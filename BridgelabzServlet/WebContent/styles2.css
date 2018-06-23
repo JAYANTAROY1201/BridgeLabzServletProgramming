@@ -1,0 +1,51 @@
+html{
+	overflow: hidden;
+}
+
+body{
+	
+	background: url('wall.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+	background-size: cover;
+	
+}
+
+header.sticky{
+	position: fixed;
+	text-align: center;
+}
+
+header{
+	position: absolute;
+	width: 100%;
+	border-bottom: 3px solid #f72b00;
+}
+
+.background img{
+	margin: 0;
+	padding: 0;
+}
+
+input{
+	position: absolute;
+	top: 280px;
+	left: 650px;
+	border: none;
+	outline: none;
+	height: 50px;
+	width: 120px;
+	color: #ffffff;
+	font-size: 14px;
+	background: #F72B00;
+	cursor: pointer;
+	border-radius: 30px;
+	margin-top: 20px;
+	text-align: center;
+	text-decoration: none;
+}
+input:hover{
+	background: #C0435A;
+	color: #262626;
+}
