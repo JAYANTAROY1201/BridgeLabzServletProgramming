@@ -1,15 +1,26 @@
 package com.capgemini.dto;
 
 public class UserBean {
+	private int serial_no;
 	private String email;
 	private String userName;
 	private String password;
+	private String mobile;
 	public UserBean()
 	{
+		this.serial_no=serial_no;
 		this.email=email;
 		this.userName=userName;
 		this.password=password;
+		this.mobile=mobile;
 	}
+	public int getId() {
+		return serial_no;
+	}
+	public void setId(int serial_no) {
+		this.serial_no = serial_no;
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -27,5 +38,11 @@ public class UserBean {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 }

@@ -32,7 +32,7 @@ public class LogoutServlet extends HttpServlet {
 			
 		}
 		out.println("<h3 style=\"color:white; background-color:red\">You have Successfully Logged out from application..See you again..!!!</h3>");
-		RequestDispatcher dispatcher=request.getRequestDispatcher("Login.html");
+		RequestDispatcher dispatcher=request.getRequestDispatcher("HomePage.html");
 		dispatcher.include(request, response);
 	}
 

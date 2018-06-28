@@ -42,9 +42,11 @@ public class JdbcImplementation{
 				bean=new UserBean();
 				//set the data
 		
-				bean.setuserName(rs.getString("userName")); 
+				bean.setId(rs.getInt("serial_no"));
+				bean.setuserName(rs.getString("user_name")); 
 				bean.setUserEmail(rs.getString("email"));
 				bean.setPassword(rs.getString("password"));
+				bean.setMobile(rs.getString("mobile"));
 				
 				
 			}								
@@ -75,7 +77,7 @@ public class JdbcImplementation{
 	}//End of authenticate
 	
 	
-	public static int dataEnrty(String email,String username, String password) throws ClassNotFoundException
+	public static int dataEnrty(String email,String user_name, String password,String mobile) throws ClassNotFoundException
 	{
 		int count=0;
 		Connection con=null;
@@ -84,11 +86,12 @@ public class JdbcImplementation{
 		try {
 			pool = ConnectionPool.getInstance();
 			con = pool.getConnectionFromPool();           
-			String query="insert into emp values(?,?,?)";
+			String query="insert into emp(email,user_name,password,mobile) values(?,?,?,?)";
 			pstn=con.prepareStatement(query);
 			pstn.setString(1,email);
-			pstn.setString(2,username);
+			pstn.setString(2,user_name);
 			pstn.setString(3,password);
+			pstn.setString(4,mobile);
 			count=pstn.executeUpdate();						
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -20,11 +20,12 @@ public class SignUpServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email=request.getParameter("email");
-		String username=request.getParameter("username");
+		String user_name=request.getParameter("user_name");
 		String password=request.getParameter("password");
+		String mobile=request.getParameter("mobile");
 		try {
 			JdbcImplementation jdbc=new JdbcImplementation();
-			if(jdbc.dataEnrty(email, username, password)==1) {
+			if(jdbc.dataEnrty(email,user_name, password,mobile)==1) {
 			String htmlresp="<html>"+"<title>"+"SignUp"+
 			"</title>"+"<body>"+"<h2>"+"SIGNUP SUCCESSFULL"+"</h2>"
 			+"<center>"+"<a href=Login.html>"+
