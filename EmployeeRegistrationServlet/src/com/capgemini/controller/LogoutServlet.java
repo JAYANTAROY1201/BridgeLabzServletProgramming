@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 /**
  * Servlet implementation class LogoutServlet
  */
@@ -21,8 +22,6 @@ public class LogoutServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
-		PrintWriter out=response.getWriter();
 		
 		HttpSession  session=request.getSession(false);
 		
@@ -31,9 +30,8 @@ public class LogoutServlet extends HttpServlet {
 			session.invalidate();
 			
 		}
-		out.println("<h3 style=\"color:white; background-color:red\">You have Successfully Logged out from application..See you again..!!!</h3>");
-		RequestDispatcher dispatcher=request.getRequestDispatcher("HomePage.html");
-		dispatcher.include(request, response);
+		RequestDispatcher dispatcher=request.getRequestDispatcher("logout.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

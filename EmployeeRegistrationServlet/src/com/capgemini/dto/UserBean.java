@@ -1,11 +1,17 @@
 package com.capgemini.dto;
 
-public class UserBean {
+import java.io.Serializable;
+
+public class UserBean implements Serializable {
+	
 	private int serial_no;
 	private String email;
 	private String userName;
 	private String password;
 	private String mobile;
+	
+	
+
 	public UserBean()
 	{
 		this.serial_no=serial_no;
@@ -14,6 +20,7 @@ public class UserBean {
 		this.password=password;
 		this.mobile=mobile;
 	}
+	
 	public int getId() {
 		return serial_no;
 	}

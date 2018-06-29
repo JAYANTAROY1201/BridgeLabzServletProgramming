@@ -6,10 +6,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 import com.capgemini.dao.JdbcImplementation;
 
@@ -26,19 +25,11 @@ public class SignUpServlet extends HttpServlet {
 		try {
 			JdbcImplementation jdbc=new JdbcImplementation();
 			if(jdbc.dataEnrty(email,user_name, password,mobile)==1) {
-			String htmlresp="<html>"+"<title>"+"SignUp"+
-			"</title>"+"<body>"+"<h2>"+"SIGNUP SUCCESSFULL"+"</h2>"
-			+"<center>"+"<a href=Login.html>"+
-			"CLICK HERE TO LOGIN"+"<a>"+"</center>"+
-			"</body>"+"</html>";
-			
-			PrintWriter out=response.getWriter();
-			response.setContentType("text/html");
-			out.println(htmlresp);
+			response.sendRedirect("signup-successfull");
 			}
 			else
 			{
-				request.getRequestDispatcher("SignUp.html").forward(request, response);
+				response.sendRedirect("resignup");
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
