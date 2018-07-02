@@ -3,22 +3,16 @@ package com.capgemini.dto;
 import java.io.Serializable;
 
 public class UserBean implements Serializable {
-	
+
+	private static final long serialVersionUID = 1L;
 	private int serial_no;
 	private String email;
 	private String userName;
 	private String password;
 	private String mobile;
 	
-	
-
 	public UserBean()
 	{
-		this.serial_no=serial_no;
-		this.email=email;
-		this.userName=userName;
-		this.password=password;
-		this.mobile=mobile;
 	}
 	
 	public int getId() {

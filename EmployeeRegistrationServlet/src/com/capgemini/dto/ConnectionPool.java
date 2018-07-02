@@ -44,7 +44,7 @@ public class ConnectionPool {
 	public Connection getConnectionFromPool() 
 	throws SQLException
 	{
-		System.out.println("Pool Size before getting the Connection : "+pool.size());
+		//System.out.println("Pool Size before getting the Connection : "+pool.size());
 		
 		Connection con = null;
 		if(pool.size()>0)
@@ -57,7 +57,7 @@ public class ConnectionPool {
 			con = DriverManager.getConnection(dbUrl, userNM, password);
 		}
 		
-		System.out.println("Pool Size after getting the Connection : "+pool.size());
+		//System.out.println("Pool Size after getting the Connection : "+pool.size());
 		return con;
 	}//End of getConnectionFromPool()
 	
@@ -65,7 +65,7 @@ public class ConnectionPool {
 	public void returnConnectionToPool(Connection con) 
 	throws SQLException
 	{
-		System.out.println("Pool Size before returning the Connection : "+pool.size());
+		//System.out.println("Pool Size before returning the Connection : "+pool.size());
 		if(pool.size()<=pool_size)
 		{
 			pool.add(con);
@@ -73,6 +73,6 @@ public class ConnectionPool {
 			con.close();
 		}
 		
-		System.out.println("Pool Size after returning the Connection : "+pool.size());
+		//System.out.println("Pool Size after returning the Connection : "+pool.size());
 	}//End of returnConnectionToPool()
 }

@@ -19,7 +19,7 @@ public class PreLoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.getRequestDispatcher("Login.html").forward(request, response);
+		request.getRequestDispatcher("Login.jsp").forward(request, response);
 
 		
 	}

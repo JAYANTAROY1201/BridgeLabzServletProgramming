@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>SignUp</display-name>
   <welcome-file-list>
-    <welcome-file>/HomePage.html</welcome-file>
+    <welcome-file>/HomePage.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>prelogin</servlet-name>
@@ -12,6 +12,30 @@
     <servlet-name>prelogin</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
+  <filter>
+    <filter-name>loginfilter</filter-name>
+    <filter-class>com.capgemini.controller.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginfilter</filter-name>
+    <url-pattern>/loginsuccessfull</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>postlogin</servlet-name>
+    <servlet-class>com.capgemini.controller.PostLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>postlogin</servlet-name>
+    <url-pattern>/loginsuccessfull</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>unsuccess</servlet-name>
+    <servlet-class>com.capgemini.controller.ReLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>unsuccess</servlet-name>
+    <url-pattern>/relogin</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>presignup</servlet-name>
     <servlet-class>com.capgemini.controller.PreSignupServlet</servlet-class>
@@ -20,45 +44,21 @@
     <servlet-name>presignup</servlet-name>
     <url-pattern>/signup</url-pattern>
   </servlet-mapping>
+  <filter>
+    <filter-name>signupfilter</filter-name>
+    <filter-class>com.capgemini.controller.SignupFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>signupfilter</filter-name>
+    <url-pattern>/signup-successful</url-pattern>
+  </filter-mapping>
   <servlet>
     <servlet-name>signup</servlet-name>
-    <servlet-class>com.capgemini.controller.SignUpServlet</servlet-class>
+    <servlet-class>com.capgemini.controller.PostSignUpServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>signup</servlet-name>
-    <url-pattern>/signupprocess</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>postlogin</servlet-name>
-    <servlet-class>com.capgemini.controller.LoginServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>postlogin</servlet-name>
-    <url-pattern>/loginprocess</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>loginsuccess</servlet-name>
-    <servlet-class>com.capgemini.controller.LoginSuccessfull</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>loginsuccess</servlet-name>
-    <url-pattern>/login-successfull</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>signupsuccess</servlet-name>
-    <servlet-class>com.capgemini.controller.SignUpSuccessServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>signupsuccess</servlet-name>
-    <url-pattern>/signup-successfull</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>unsuccess</servlet-name>
-    <servlet-class>com.capgemini.controller.ReLogin</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>unsuccess</servlet-name>
-    <url-pattern>/relogin</url-pattern>
+    <url-pattern>/signup-successful</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>signupunsuccess</servlet-name>
@@ -74,6 +74,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>logout</servlet-name>
-    <url-pattern>/Logout</url-pattern>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
 </web-app>

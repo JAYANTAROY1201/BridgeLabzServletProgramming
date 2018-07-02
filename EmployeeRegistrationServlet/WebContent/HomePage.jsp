@@ -1,22 +1,18 @@
-
 <html>
 	<title>
 		WELCOME TO CAPGEMINI
 	</title>
 <head>
 
-<script type="text/javascript" src="jquery-3.3.1.js"></script>
-	
 </head>
 <title>HOMEPAGE</title>
 <body>
-
 	<header><center><img src="capgemini.png"></center></header>
 	<form action="login" method="get">		
-    <input type="Submit" value="Click to Login"></a>
+    <input type="Submit" value="Click to Login">
 	</form>
 	<form  action="signup" method="get">
-	<input type="Submit" value="Sign Up"></a>
+	<input type="Submit" value="Sign Up">
     </form>
 </body>
 </html>
