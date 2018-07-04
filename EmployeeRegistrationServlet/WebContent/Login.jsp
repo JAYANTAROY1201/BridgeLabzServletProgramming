@@ -37,7 +37,7 @@
 			placeholder="Enter email"><br> <br> <label>Password</label><br>
 		<input type="password" name="password" placeholder="Enter password"><br>
 		<br> <input type="Submit" value="Login"> <a
-			href="forgetpass.html">Forgot Password?</a>
+			href="forget-password">Forgot Password?</a>
 	</form>
 </body>
 </html>

@@ -7,27 +7,24 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 
 import com.capgemini.dao.JdbcImplementation;
 
 /**
- * Servlet Filter implementation class SignupFilter
- */
-/**
- * Purpose: Servlet Filter implementation class SignupFilter
+ * Purpose:Servlet Filter implementation class ForgetPasswordFilter
  * @author JAYANTA ROY
  * @version 1.0
  * @since 04/07/18
  */
-public class SignupFilter implements Filter {
+public class ForgetPasswordFilter implements Filter {
 
 	/**
 	 * @see Filter#destroy()
 	 */
-	public void destroy() 
-	{
-		System.gc();
+	public void destroy() {
+		// TODO Auto-generated method stub
 	}
 
 	/**
@@ -36,15 +33,11 @@ public class SignupFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		String email = request.getParameter("email");
-		String user_name = request.getParameter("user_name");
-		String password = request.getParameter("password");
-		String mobile = request.getParameter("mobile");
-
 		JdbcImplementation jdbc = new JdbcImplementation();
-		if (jdbc.dataEnrty(email, user_name, password, mobile) == 1) {
-			chain.doFilter(request, response);
+		if (jdbc.checkEmail(email) == false) {
+			((HttpServletResponse) response).sendRedirect("forget-password");
 		} else {
-			((HttpServletResponse) response).sendRedirect("resignup");
+			chain.doFilter(request, response);
 		}
 	}
 
@@ -54,5 +47,4 @@ public class SignupFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		// TODO Auto-generated method stub
 	}
-
 }

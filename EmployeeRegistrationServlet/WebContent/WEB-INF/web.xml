@@ -76,4 +76,28 @@
     <servlet-name>logout</servlet-name>
     <url-pattern>/logout</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>preforgot</servlet-name>
+    <servlet-class>com.capgemini.controller.PreForgetPassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>preforgot</servlet-name>
+    <url-pattern>/forget-password</url-pattern>
+  </servlet-mapping>
+  <filter>
+  <filter-name>forgetpassword</filter-name>
+  <filter-class>com.capgemini.controller.ForgetPasswordFilter</filter-class>
+  </filter>
+  <filter-mapping>
+   <filter-name>forgetpassword</filter-name>
+   <url-pattern>/recover-password</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>postforgot</servlet-name>
+    <servlet-class>com.capgemini.controller.PostForgetPassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>postforgot</servlet-name>
+    <url-pattern>/recover-password</url-pattern>
+  </servlet-mapping>
 </web-app>

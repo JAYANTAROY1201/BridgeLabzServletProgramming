@@ -15,7 +15,6 @@ import com.capgemini.dto.UserBean;
 
 /**
  * Purpose:Servlet class for LoginServlet
- * 
  * @author JAYANTA ROY
  * @version 1.0
  * @since 29/06/18

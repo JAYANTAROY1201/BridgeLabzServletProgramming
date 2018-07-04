@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSessionEvent;
  * Purpose:Servlet implementation class LogoutServlet
  * @author JAYANTA ROY
  * @version 1.0
- * @since 
+ * @since 04/07/18
  */
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,8 +38,6 @@ public class LogoutServlet extends HttpServlet {
 			System.out.println("no session");
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher("logout.jsp");
-		dispatcher.forward(request, response);
-		
+		dispatcher.forward(request, response);		
 	}
-
 }

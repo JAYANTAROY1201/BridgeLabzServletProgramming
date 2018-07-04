@@ -21,7 +21,8 @@ public class PreSignupServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		request.getRequestDispatcher("SignUp.jsp").forward(request, response);
 	}
 }

@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Purpose:Servlet implementation class Resignup
+ * Purpose:Servlet implementation class PreForgetPassword
  * @author JAYANTA ROY
  * @version 1.0
  * @since 04/07/18
  */
-public class ResignupServlet extends HttpServlet {
+public class PreForgetPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -20,18 +20,8 @@ public class ResignupServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException 
-	{
-		request.getRequestDispatcher("resignup.jsp").forward(request, response);
-	}
+			throws ServletException, IOException {
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException 
-	{
-		doGet(request, response);
+		request.getRequestDispatcher("Forgot-password.jsp").forward(request, response);
 	}
 }
